@@ -17,6 +17,7 @@
 		<meta name="twitter:image" content="./_app/immutable/assets/avatar.png" />
 		<title>will - Blog</title>
 		<link rel="stylesheet" href="./styles.css" />
+		<script src="./_app/immutable/assets/scripts/lastfm-widget.js" defer></script>
 	</head>
 	<body>
 		<div class="the-whole-ass-thing">
@@ -29,11 +30,23 @@
 						<b>will</b>
 						<div class="tagline">s o m e   t h o u g h t s .</div>
 					</div>
+					<div class="header-lastfm" data-lastfm aria-label="Last played on Last.fm">
+						<a class="header-lastfm-cover-link" data-lastfm-link target="_blank" rel="noopener noreferrer" title="Open on Last.fm">
+							<img class="header-lastfm-cover" data-lastfm-cover src="" alt="" hidden width="32" height="32" />
+						</a>
+						<div class="header-lastfm-text">
+							<a class="header-lastfm-profile" data-lastfm-profile target="_blank" rel="noopener noreferrer">▸ last.fm</a>
+							<a class="header-lastfm-title" data-lastfm-link target="_blank" rel="noopener noreferrer"><span data-lastfm-title>loading…</span></a>
+							<div class="header-lastfm-meta">
+								<span data-lastfm-artist></span>
+								<span data-lastfm-time></span>
+							</div>
+						</div>
+					</div>
 					<button aria-label="Toggle navigation menu" class="menu-icon" onclick="document.querySelector('nav').classList.toggle('show-mobile')">
 						<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
 					</button>
 				</header>
-				<div class="main-split">
 					<nav>
 						<a href="./">
 							<span class="nav-icon">
@@ -58,20 +71,24 @@
 						<article>
 							<h1>Blog</h1>
 							<div role="separator" class="pixel-display title-separator">------------------------------------</div>
-							<p>Welcome to my blog! This is a place for me to share my thoughts, projects, and other things I'm working on.</p>
+							<h2>posts</h2>
+							<p>welcome to my blog. this is where I dump whatever I'm thinking about — half-finished thoughts, project updates, and the occasional ramble. don't expect a schedule.</p>
 							<section>
 								<div class="posts">
 									<a href="./blog/hello-world" class="post">
-										<img src="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20%3F%3E%3Csvg%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%224%22%20height%3D%2214%22%20fill%3D%22%23000000%22%20%2F%3E%3Crect%20x%3D%226%22%20y%3D%224%22%20width%3D%222%22%20height%3D%2210%22%20fill%3D%22%23000000%22%20%2F%3E%3Crect%20x%3D%228%22%20y%3D%226%22%20width%3D%222%22%20height%3D%226%22%20fill%3D%22%23000000%22%20%2F%3E%3Crect%20x%3D%2210%22%20y%3D%228%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22%23000000%22%20%2F%3E%3C%2Fsvg%3E" alt="" class="selection-indicator" />
-										<h2 class="title">Hello, world</h2>
+										<h2 class="title">hello, world</h2>
 										<p class="date">June 5, 2026</p>
-										<p class="desc">First post on the new site. Figured I'd start things off with something simple.</p>
+										<p class="desc">first post on the new site. figured I'd start things off with something simple while I get the new place settled in.</p>
 									</a>
-									<a href="./blog/another-post" class="post">
-										<img src="data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22UTF-8%22%20%3F%3E%3Csvg%20version%3D%221.1%22%20width%3D%2216%22%20height%3D%2216%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20shape-rendering%3D%22crispEdges%22%3E%3Crect%20x%3D%222%22%20y%3D%222%22%20width%3D%224%22%20height%3D%2214%22%20fill%3D%22%23000000%22%20%2F%3E%3Crect%20x%3D%226%22%20y%3D%224%22%20width%3D%222%22%20height%3D%2210%22%20fill%3D%22%23000000%22%20%2F%3E%3Crect%20x%3D%228%22%20y%3D%226%22%20width%3D%222%22%20height%3D%226%22%20fill%3D%22%23000000%22%20%2F%3E%3Crect%20x%3D%2210%22%20y%3D%228%22%20width%3D%222%22%20height%3D%222%22%20fill%3D%22%23000000%22%20%2F%3E%3C%2Fsvg%3E" alt="" class="selection-indicator" />
-										<h2 class="title">Another post goes here</h2>
-										<p class="date">May 20, 2026</p>
-										<p class="desc">A short summary of what this post is about goes here. Replace this with something real.</p>
+									<a href="./blog/new-site-who-dis" class="post">
+										<h2 class="title">new site, who dis?</h2>
+										<p class="date">June 6, 2026</p>
+										<p class="desc">migrated the old bitsixfour/website over to this layout. same content, same vibe, just a fresh coat of paint and a last.fm widget quietly tucked into the corner.</p>
+									</a>
+									<a href="./blog/welcome-to-the-machine" class="post">
+										<h2 class="title">welcome to the machine</h2>
+										<p class="date">March 16, 2026</p>
+										<p class="desc">a quick hello from the previous site. keeping it here for posterity — last modified 3/16/26'.</p>
 									</a>
 								</div>
 							</section>

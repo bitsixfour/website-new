@@ -512,11 +512,102 @@ a.grid-link:hover {
 	font-family: monogram, monospace;
 	font-style: italic;
 	font-synthesis: none;
-	image-rendering: pixelated;
 	line-height: 59.1%;
 }
 
 .posts .post .date {
 	opacity: 50%;
 	font-size: 0.875rem;
+}
+
+.header-lastfm {
+	display: none;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.35rem 0.65rem;
+	border-radius: 0.4rem;
+	color: var(--text);
+	font-size: 0.85rem;
+	max-width: 22rem;
+	min-width: 0;
+	text-align: left;
+	transition: background-color 0.15s ease;
+}
+
+.header-lastfm:hover {
+	background-color: oklch(from var(--lines) l c h / 0.25);
+}
+
+.header-lastfm-cover-link {
+	flex-shrink: 0;
+	display: block;
+	line-height: 0;
+}
+
+.header-lastfm-cover {
+	width: 32px;
+	height: 32px;
+	object-fit: cover;
+	display: block;
+	border-radius: 0.25rem;
+	background-color: var(--backing);
+}
+
+.header-lastfm-cover[hidden] {
+	display: none;
+}
+
+.header-lastfm-text {
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.05rem;
+	line-height: 1.2;
+	overflow: hidden;
+}
+
+.header-lastfm-profile {
+	font-family: monogram, monospace;
+	font-style: italic;
+	font-size: 0.7rem;
+	opacity: 0.65;
+	color: var(--text);
+	text-decoration: none;
+	letter-spacing: 0.02em;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.header-lastfm-title {
+	color: var(--text-accented);
+	text-decoration: none;
+	font-size: 0.92rem;
+	font-weight: 500;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.header-lastfm-title:hover {
+	color: var(--blue);
+}
+
+.header-lastfm-meta {
+	font-size: 0.78rem;
+	opacity: 0.7;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.header-lastfm-time:not(:empty)::before {
+	content: " · ";
+	opacity: 0.7;
+}
+
+@media (min-width: 44rem) {
+	.header-lastfm {
+		display: flex;
+	}
 }
