@@ -91,7 +91,7 @@ h6 {
 }
 
 :root {
-	--blue: #6878a0;
+	--blue: #a4988e;
 	--green: #7a8a64;
 	--red: #9a5a52;
 	--orange: #9e8060;
@@ -121,19 +121,13 @@ h1 {
 }
 
 h1 {
-	font-size: 2rem;
+	font-size: 2.5rem;
 	line-height: 1;
 }
 
 h2 {
 	font-size: 1.5rem;
 	font-weight: 400;
-}
-
-@media (min-width: 44rem) {
-	h1 {
-		font-size: 2.5rem;
-	}
 }
 
 a:link,
@@ -204,41 +198,16 @@ nav a:not(.nav-active):hover {
 
 nav {
 	border-right: none;
-	flex-grow: 1;
-	position: fixed;
-	display: flex;
-	flex-direction: column;
+	flex-grow: 0;
 	width: 100%;
-	height: calc(100dvh - 5.625rem);
-	background-color: oklch(from var(--main-bg) l c h / 0.82);
-	-webkit-backdrop-filter: blur(2.05px);
-	backdrop-filter: blur(2.05px);
+	height: auto;
+	position: sticky;
+	top: 5.625rem;
+	background-color: var(--main-bg);
+	border-bottom: 2px solid var(--lines);
 	z-index: 2137;
-}
-
-nav:not(.show-mobile) {
-	display: none;
-}
-
-@media (min-width: 44rem) {
-	nav {
-		position: sticky;
-		top: 5.625rem;
-		max-width: none;
-		min-width: auto;
-		width: 100%;
-		height: auto;
-		flex-direction: row;
-		flex-grow: 0;
-		background-color: var(--main-bg);
-		-webkit-backdrop-filter: none;
-		backdrop-filter: none;
-		border-right: none;
-		border-bottom: 2px solid var(--lines);
-	}
-	nav:not(.show-mobile) {
-		display: flex;
-	}
+	display: flex;
+	flex-direction: row;
 }
 
 header {
@@ -278,28 +247,7 @@ header {
 }
 
 .name-display b {
-	font-size: 1.3rem;
-}
-
-button.menu-icon {
-	background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-	min-width: 3rem;
-	min-height: 3rem;
-}
-
-@media (min-width: 44rem) {
-	.name-display b {
-		font-size: 1.9rem;
-	}
-	button.menu-icon {
-		display: none;
-	}
+	font-size: 1.9rem;
 }
 
 @keyframes grid-scroll {
@@ -349,7 +297,7 @@ button.menu-icon {
 	display: flex;
 	flex-direction: column;
 	gap: 1.4rem;
-	margin: 1rem 2rem;
+	margin: 3.5rem 5rem;
 	max-width: 100%;
 	min-width: 0;
 	flex-grow: 1;
@@ -361,12 +309,6 @@ button.menu-icon {
 	margin-top: 4rem;
 	text-align: center;
 	font-size: 0.85rem;
-}
-
-@media (min-width: 44rem) {
-	.main-panel {
-		margin: 3.5rem 5rem;
-	}
 }
 
 .title-separator {
@@ -443,17 +385,11 @@ a.grid-link:hover {
 	z-index: -1;
 	opacity: 20%;
 	top: 6rem;
-	right: -2.5rem;
+	right: 3rem;
 	height: 84rem;
 	max-width: 42rem;
 	object-fit: contain;
 	object-position: top center;
-}
-
-@media (min-width: 44rem) {
-	.mentha-lamie {
-		right: 3rem;
-	}
 }
 
 .posts {
@@ -500,7 +436,7 @@ a.grid-link:hover {
 }
 
 .header-lastfm {
-	display: none;
+	display: flex;
 	align-items: center;
 	gap: 0.75rem;
 	padding: 0.45rem 0.7rem;
@@ -580,10 +516,4 @@ a.grid-link:hover {
 .header-lastfm-time:not(:empty)::before {
 	content: " · ";
 	opacity: 0.7;
-}
-
-@media (min-width: 44rem) {
-	.header-lastfm {
-		display: flex;
-	}
 }
