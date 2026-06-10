@@ -5,5 +5,8 @@
 	"scripts": {
 		"dev": "bun run server.ts",
 		"start": "bun run server.ts"
+	},
+	"dependencies": {
+		"marked": "^18.0.5"
 	}
 }

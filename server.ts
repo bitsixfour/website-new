@@ -1,3 +1,6 @@
+import { getPost, getPosts } from "./lib/posts.ts";
+import { renderIndex, renderPostPage } from "./lib/layout.ts";
+
 const PORT = Number(process.env.PORT ?? 3000);
 
 const MIME: Record<string, string> = {
@@ -17,11 +20,11 @@ const MIME: Record<string, string> = {
 	".woff2": "font/woff2",
 	".txt": "text/plain; charset=utf-8",
 	".xml": "application/xml; charset=utf-8",
+	".md": "text/markdown; charset=utf-8",
 };
 
 const ROUTES: Record<string, string> = {
 	"/": "index.html",
-	"/blog": "blog.html",
 	"/credits": "credits.html",
 };
 
@@ -38,11 +41,37 @@ async function serveFile(path: string): Promise<Response> {
 	});
 }
 
+async function handleBlogIndex(): Promise<Response> {
+	const posts = await getPosts();
+	return new Response(renderIndex(posts), {
+		headers: { "Content-Type": MIME[".html"] },
+	});
+}
+
+async function handleBlogPost(slug: string): Promise<Response> {
+	const post = await getPost(slug);
+	if (!post) {
+		return new Response("Post not found", { status: 404 });
+	}
+	return new Response(renderPostPage(post), {
+		headers: { "Content-Type": MIME[".html"] },
+	});
+}
+
 Bun.serve({
 	port: PORT,
 	async fetch(req) {
 		const url = new URL(req.url);
 		let pathname = decodeURIComponent(url.pathname);
+
+		if (pathname === "/blog" || pathname === "/blog/") {
+			return handleBlogIndex();
+		}
+
+		const blogMatch = pathname.match(/^\/blog\/([^/]+)\/?$/);
+		if (blogMatch) {
+			return handleBlogPost(blogMatch[1]);
+		}
 
 		if (pathname in ROUTES) {
 			pathname = `/${ROUTES[pathname]}`;

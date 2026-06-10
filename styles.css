@@ -418,16 +418,30 @@ a.grid-link:hover {
 	display: none;
 }
 
-.posts .post .title::before {
-	content: "▸ ";
+.posts .post .post-row {
+	display: flex;
+	gap: 0.85rem;
+	align-items: baseline;
 }
+
+.posts .post .post-numeral {
+	font-family: monogram, monospace;
+	font-style: italic;
+	font-synthesis: none;
+	font-size: 1.5rem;
+	line-height: 1;
+	color: var(--blue);
+	min-width: 2.25rem;
+	flex-shrink: 0;
+}
+
 .posts .post .title {
 	font-size: 1.5rem;
 	font-weight: 400;
 	font-family: monogram, monospace;
 	font-style: italic;
 	font-synthesis: none;
-	line-height: 59.1%;
+	line-height: 1.05;
 }
 
 .posts .post .date {
@@ -512,8 +526,173 @@ a.grid-link:hover {
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
+.post-date {
+	opacity: 50%;
+	font-size: 0.875rem;
+}
 
-.header-lastfm-time:not(:empty)::before {
-	content: " · ";
-	opacity: 0.7;
+.post-back {
+	font-size: 0.95rem;
+	opacity: 80%;
+}
+
+.post-back a {
+	text-decoration: none;
+}
+
+.post-back a:hover {
+	text-decoration: underline;
+}
+
+.post-body {
+	max-width: 42rem;
+	line-height: 1.6;
+	color: var(--text);
+}
+
+.post-body > * + * {
+	margin-top: 1rem;
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3,
+.post-body h4,
+.post-body h5,
+.post-body h6 {
+	font-family: monogram, monospace;
+	font-style: italic;
+	font-synthesis: none;
+	font-weight: 400;
+	line-height: 1.15;
+	color: var(--text-accented);
+}
+
+.post-body h1 {
+	font-size: 2.2rem;
+	margin-top: 1.5rem;
+}
+
+.post-body h2 {
+	font-size: 1.6rem;
+	margin-top: 1.5rem;
+}
+
+.post-body h2::before {
+	content: "▸ ";
+	color: var(--blue);
+}
+
+.post-body h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.post-body h4 {
+	font-size: 1.05rem;
+	margin-top: 1rem;
+	opacity: 90%;
+}
+
+.post-body p {
+	margin: 0;
+}
+
+.post-body p + p {
+	margin-top: 1rem;
+}
+
+.post-body ul,
+.post-body ol {
+	padding-left: 1.5rem;
+	margin: 0;
+}
+
+.post-body li {
+	margin-bottom: 0.3rem;
+}
+
+.post-body li > :last-child {
+	margin-bottom: 0;
+}
+
+.post-body a {
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+}
+
+.post-body a:hover {
+	color: var(--text-accented);
+}
+
+.post-body strong {
+	color: var(--text-accented);
+	font-weight: 600;
+}
+
+.post-body blockquote {
+	margin: 0;
+	padding: 0.4rem 1rem;
+	border-left: 2px solid var(--lines);
+	color: var(--text-accented);
+	opacity: 90%;
+	font-style: italic;
+}
+
+.post-body pre {
+	margin: 0;
+	padding: 0.85rem 1rem;
+	border-radius: 0.4rem;
+	background-color: oklch(from var(--lines) l c h / 0.18);
+	overflow-x: auto;
+	font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+	font-size: 0.9rem;
+	line-height: 1.45;
+}
+
+.post-body pre code {
+	padding: 0;
+	background: none;
+	border-radius: 0;
+	font-size: inherit;
+	color: var(--text-accented);
+}
+
+.post-body code {
+	font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+	font-size: 0.92em;
+}
+
+.post-body hr {
+	border: none;
+	border-top: 2px dashed var(--lines);
+	margin: 0.5rem 0;
+}
+
+.post-body img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 0.4rem;
+	border: 2px solid var(--lines);
+}
+
+.post-body table {
+	border-collapse: collapse;
+	width: 100%;
+	font-size: 0.92rem;
+}
+
+.post-body th,
+.post-body td {
+	border: 1px solid var(--lines);
+	padding: 0.4rem 0.7rem;
+	text-align: left;
+}
+
+.post-body th {
+	background-color: var(--backing);
+	color: var(--text-accented);
+	font-weight: 500;
 }
